@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Direção Elétrica em Feira de Santana | Freios ABS, Airbag e Ar-Condicionado</title>
+<meta name="description" content="Especializada em direção elétrica e hidráulica, freios ABS, airbag, ar-condicionado automotivo, injeção eletrônica e recarga de gás em Feira de Santana, BA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black: #0a0a0b;
+    --black-2: #151517;
+    --black-3: #1e1e21;
+    --yellow: #ffcc00;
+    --yellow-soft: #ffe066;
+    --yellow-dim: #7a6100;
+    --white: #f6f5f1;
+    --ink: #17181a;
+    --gray: #6b6b70;
+    --gray-light: #a9a9ae;
+    --line: rgba(255,204,0,0.14);
+    --radius: 4px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--white);
+    color:var(--ink);
+    font-family:'Manrope', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Rajdhani', sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+    line-height:1.05;
+  }
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+  img{max-width:100%; display:block;}
+  .mono{font-family:'JetBrains Mono', monospace;}
+  .eyebrow{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--yellow);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:1px;
+    background:var(--yellow);
+    box-shadow:0 0 6px var(--yellow);
+  }
+  .section-pad{padding:96px 6vw;}
+  .wrap{max-width:1180px; margin:0 auto;}
+
+  /* ---------- glow helpers ---------- */
+  .glow-text{ text-shadow:0 0 18px rgba(255,204,0,0.55), 0 0 46px rgba(255,204,0,0.18); }
+  .neon-border{
+    border:1px solid var(--line);
+    transition:border-color .35s ease, box-shadow .35s ease, transform .35s ease;
+  }
+  .neon-border:hover{
+    border-color:var(--yellow);
+    box-shadow:0 0 0 1px rgba(255,204,0,0.25), 0 0 28px rgba(255,204,0,0.28), 0 0 70px rgba(255,204,0,0.08);
+    transform:translateY(-4px);
+  }
+
+  /* ---------- header ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(10,10,11,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    max-width:1280px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 6vw;
+  }
+  .nav-brand{
+    font-family:'Rajdhani', sans-serif;
+    font-weight:700;
+    font-size:1.15rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--white);
+    display:flex; align-items:center; gap:10px;
+  }
+  .nav-brand .dot{
+    width:8px; height:8px; border-radius:50%;
+    background:var(--yellow);
+    box-shadow:0 0 10px var(--yellow);
+  }
+  .nav-brand span{ color:var(--yellow); }
+  .nav-links{display:flex; align-items:center; gap:34px;}
+  .nav-links a{
+    color:var(--gray-light);
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.74rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    transition:color .25s ease;
+  }
+  .nav-links a:hover{color:var(--yellow);}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 22px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.76rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    border-radius:var(--radius);
+    transition:all .3s ease;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--yellow); color:var(--black); font-weight:700;
+    box-shadow:0 0 22px rgba(255,204,0,0.35);
+  }
+  .btn-primary:hover{ box-shadow:0 0 34px rgba(255,204,0,0.65); transform:translateY(-2px); }
+  .btn-ghost{
+    border:1px solid rgba(255,204,0,0.4); color:var(--yellow);
+  }
+  .btn-ghost:hover{ background:rgba(255,204,0,0.08); box-shadow:0 0 20px rgba(255,204,0,0.25); }
+  .menu-toggle{display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none;}
+  .menu-toggle span{width:24px; height:2px; background:var(--yellow);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    background:var(--black);
+    color:var(--white);
+    padding:180px 6vw 120px;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,204,0,0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,204,0,0.055) 1px, transparent 1px);
+    background-size:46px 46px;
+    -webkit-mask-image:radial-gradient(ellipse 70% 60% at 70% 30%, black 10%, transparent 75%);
+            mask-image:radial-gradient(ellipse 70% 60% at 70% 30%, black 10%, transparent 75%);
+    z-index:0;
+  }
+  .hero-glow{
+    position:absolute; width:640px; height:640px; border-radius:50%;
+    background:radial-gradient(circle, rgba(255,204,0,0.20) 0%, transparent 70%);
+    top:-220px; right:-140px; z-index:0; pointer-events:none;
+  }
+  .scanline{
+    position:absolute; left:0; right:0; height:1px;
+    background:linear-gradient(90deg, transparent, var(--yellow), transparent);
+    box-shadow:0 0 12px 1px rgba(255,204,0,0.6);
+    animation:scan 5.5s linear infinite;
+    z-index:0; opacity:0.55;
+  }
+  @keyframes scan{
+    0%{ top:8%; opacity:0; }
+    8%{ opacity:.6; }
+    92%{ opacity:.6; }
+    100%{ top:96%; opacity:0; }
+  }
+  .hero-inner{position:relative; z-index:1; max-width:920px;}
+  .hero h1{
+    font-size:clamp(2.4rem, 5.4vw, 4.4rem);
+    margin-bottom:26px;
+  }
+  .hero h1 span{color:var(--yellow);}
+  .hero p.lead{
+    font-size:1.08rem;
+    color:#c9c9cc;
+    max-width:700px;
+    margin-bottom:40px;
+  }
+  .hero p.lead b{color:var(--white); font-weight:700;}
+  .hero-cta{display:flex; flex-wrap:wrap; gap:16px; margin-bottom:56px;}
+  .hero-tags{display:flex; flex-wrap:wrap; gap:10px 12px;}
+  .tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--yellow-soft);
+    border:1px solid rgba(255,204,0,0.3);
+    padding:7px 12px;
+    border-radius:2px;
+    background:rgba(255,204,0,0.04);
+  }
+
+  /* ---------- marquee strip ---------- */
+  .strip{
+    background:var(--yellow);
+    color:var(--black);
+    overflow:hidden;
+    white-space:nowrap;
+    border-top:1px solid #000; border-bottom:1px solid #000;
+  }
+  .strip-track{
+    display:inline-flex;
+    animation:marquee 26s linear infinite;
+  }
+  .strip-track span{
+    display:inline-flex; align-items:center;
+    font-family:'JetBrains Mono', monospace;
+    font-weight:600;
+    font-size:0.82rem;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    padding:12px 28px;
+  }
+  .strip-track span::after{content:"◆"; margin-left:28px; font-size:0.6rem;}
+  @keyframes marquee{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+
+  /* ---------- services (white) ---------- */
+  .services{background:var(--white);}
+  .services h2{font-size:clamp(1.9rem, 3.4vw, 2.6rem); max-width:700px; margin-bottom:18px;}
+  .services > .wrap > p{color:var(--gray); max-width:620px; margin-bottom:56px; font-size:1.02rem;}
+  .grid-services{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:2px;
+    background:var(--black);
+    border:1px solid var(--black);
+  }
+  .service-card{
+    background:var(--white);
+    padding:34px 28px;
+    transition:background .3s ease, color .3s ease;
+    position:relative;
+  }
+  .service-card:hover{ background:#111; color:var(--white); }
+  .service-card:hover .svc-desc{ color:#b9b9bd; }
+  .service-card:hover .svc-num{ color:var(--yellow); text-shadow:0 0 14px rgba(255,204,0,0.6);}
+  .svc-num{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.75rem;
+    color:#b8b8bb;
+    display:block; margin-bottom:22px;
+  }
+  .service-card h3{font-size:1.28rem; margin-bottom:12px; text-transform:none; letter-spacing:0;}
+  .svc-desc{font-size:0.92rem; color:var(--gray); transition:color .3s ease;}
+
+  /* ---------- gauges / trust (black) ---------- */
+  .gauges{ background:var(--black); color:var(--white); }
+  .gauges-head{ max-width:680px; margin-bottom:64px; }
+  .gauges-head h2{ font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom:16px; }
+  .gauges-head p{ color:#b6b6ba; font-size:1.02rem; }
+  .gauge-row{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:32px;
+  }
+  .gauge-card{
+    text-align:center; padding:26px 14px;
+    border:1px solid var(--line);
+    border-radius:6px;
+    background:rgba(255,255,255,0.015);
+  }
+  .gauge-card svg{ width:120px; height:70px; }
+  .gauge-value{
+    font-family:'JetBrains Mono', monospace;
+    font-size:1.6rem; font-weight:700;
+    color:var(--yellow);
+    text-shadow:0 0 16px rgba(255,204,0,0.5);
+    margin-top:6px;
+  }
+  .gauge-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size:0.68rem; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--gray-light); margin-top:6px;
+  }
+
+  /* ---------- about / curso (white split) ---------- */
+  .about{ background:var(--white); }
+  .about-grid{
+    display:grid; grid-template-columns:1.05fr 0.95fr; gap:70px; align-items:center;
+  }
+  .about h2{ font-size:clamp(1.8rem, 3.2vw, 2.4rem); margin-bottom:22px; }
+  .about p{ color:#3c3c3e; margin-bottom:18px; font-size:1rem; }
+  .about-panel{
+    background:var(--black); color:var(--white);
+    padding:38px 34px; border-radius:6px;
+    border:1px solid var(--line);
+    position:relative;
+    box-shadow:0 0 60px rgba(255,204,0,0.06);
+  }
+  .about-panel .eyebrow{ margin-bottom:14px; }
+  .about-panel h3{ font-size:1.5rem; margin-bottom:14px; text-transform:none; letter-spacing:0;}
+  .about-panel p{ color:#c6c6ca; font-size:0.94rem; margin-bottom:26px; }
+  .about-list{ margin-bottom:28px; }
+  .about-list li{
+    display:flex; gap:10px; align-items:flex-start;
+    font-size:0.88rem; color:#d3d3d6; margin-bottom:10px;
+  }
+  .about-list li::before{ content:"▸"; color:var(--yellow); }
+
+  /* ---------- FAQ ---------- */
+  .faq{ background:var(--white); }
+  .faq h2{ font-size:clamp(1.9rem, 3.4vw, 2.6rem); margin-bottom:48px; max-width:640px; }
+  .faq-item{
+    border-top:1px solid #dcdcd7;
+    padding:26px 0;
+  }
+  .faq-item:last-child{ border-bottom:1px solid #dcdcd7; }
+  .faq-q{
+    display:flex; justify-content:space-between; align-items:center;
+    cursor:pointer; gap:24px;
+  }
+  .faq-q h4{ font-size:1.08rem; text-transform:none; letter-spacing:0; font-weight:700; }
+  .faq-q .plus{
+    font-family:'JetBrains Mono', monospace; color:var(--yellow-dim); font-size:1.3rem;
+    transition:transform .3s ease; flex-shrink:0;
+  }
+  .faq-item.open .plus{ transform:rotate(45deg); color:#c99500; }
+  .faq-a{
+    max-height:0; overflow:hidden; transition:max-height .35s ease;
+    color:var(--gray); font-size:0.95rem;
+  }
+  .faq-item.open .faq-a{ max-height:260px; margin-top:14px; }
+
+  /* ---------- location (black) ---------- */
+  .location{ background:var(--black); color:var(--white); }
+  .loc-grid{ display:grid; grid-template-columns:0.85fr 1.15fr; gap:0; border:1px solid var(--line); }
+  .loc-info{ padding:48px 40px; }
+  .loc-info h2{ font-size:clamp(1.7rem, 3vw, 2.2rem); margin-bottom:20px; }
+  .loc-info p{ color:#b6b6ba; margin-bottom:24px; font-size:0.96rem; }
+  .loc-detail{ display:flex; gap:12px; margin-bottom:16px; font-size:0.92rem; }
+  .loc-detail b{ color:var(--yellow); font-family:'JetBrains Mono', monospace; font-size:0.72rem; letter-spacing:0.06em; text-transform:uppercase; min-width:88px; display:inline-block;}
+  .map-frame{ min-height:420px; filter:grayscale(0.25) contrast(1.05); border-left:1px solid var(--line); }
+  .map-frame iframe{ width:100%; height:100%; min-height:420px; border:0; display:block; }
+
+  /* ---------- final CTA ---------- */
+  .cta-final{
+    background:var(--yellow); color:var(--black);
+    padding:90px 6vw; text-align:center;
+  }
+  .cta-final h2{ font-size:clamp(1.9rem, 4vw, 3rem); margin-bottom:20px; }
+  .cta-final p{ font-size:1.05rem; margin-bottom:34px; max-width:580px; margin-left:auto; margin-right:auto; }
+  .cta-final .btn-primary{ background:var(--black); color:var(--yellow); box-shadow:none; font-size:0.85rem; padding:16px 34px;}
+  .cta-final .btn-primary:hover{ box-shadow:0 0 30px rgba(0,0,0,0.35); }
+
+  /* ---------- footer ---------- */
+  footer{ background:var(--black-2); color:#b6b6ba; padding:64px 6vw 30px; border-top:1px solid var(--line); }
+  .foot-grid{ display:grid; grid-template-columns:1.3fr 1fr 1fr 1fr; gap:40px; margin-bottom:50px; }
+  .foot-grid .foot-brand{
+    font-family:'Rajdhani', sans-serif; font-weight:700; font-size:1.1rem;
+    letter-spacing:0.04em; text-transform:uppercase; color:var(--white);
+    margin-bottom:16px;
+  }
+  .foot-grid p{ font-size:0.88rem; color:#8b8b90; max-width:300px; }
+  .foot-col h5{
+    font-family:'JetBrains Mono', monospace; font-size:0.7rem; letter-spacing:0.1em;
+    text-transform:uppercase; color:var(--yellow); margin-bottom:16px;
+  }
+  .foot-col a{ display:block; font-size:0.9rem; color:#b6b6ba; margin-bottom:10px; transition:color .25s ease; }
+  .foot-col a:hover{ color:var(--yellow); }
+  .foot-bottom{
+    border-top:1px solid rgba(255,255,255,0.08); padding-top:24px;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+    font-size:0.78rem; color:#77777c; font-family:'JetBrains Mono', monospace;
+  }
+
+  /* ---------- whatsapp floating ---------- */
+  .float-wpp{
+    position:fixed; bottom:26px; right:26px; z-index:200;
+    width:58px; height:58px; border-radius:50%;
+    background:var(--yellow); color:var(--black);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 0 0 1px rgba(255,204,0,0.3), 0 0 24px rgba(255,204,0,0.55);
+    animation:pulse 2.6s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{ box-shadow:0 0 0 1px rgba(255,204,0,0.3), 0 0 22px rgba(255,204,0,0.5); }
+    50%{ box-shadow:0 0 0 1px rgba(255,204,0,0.5), 0 0 38px rgba(255,204,0,0.85); }
+  }
+
+  @media (max-width:860px){
+    .nav-links{
+      position:fixed; top:66px; left:0; right:0;
+      background:rgba(10,10,11,0.98);
+      flex-direction:column; align-items:flex-start;
+      padding:24px 6vw; gap:20px;
+      border-bottom:1px solid var(--line);
+      transform:translateY(-130%); transition:transform .35s ease;
+    }
+    .nav-links.open{ transform:translateY(0); }
+    .menu-toggle{ display:flex; }
+    .about-grid, .loc-grid, .grid-services, .gauge-row, .foot-grid{ grid-template-columns:1fr !important; }
+    .map-frame{ border-left:none; border-top:1px solid var(--line); }
+    .hero{ padding-top:150px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="nav-brand"><span class="dot"></span>Direção<span>Elétrica</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#diagnostico">Diagnóstico</a></li>
+      <li><a href="#curso">Curso</a></li>
+      <li><a href="#faq">Dúvidas</a></li>
+      <li><a href="#local">Localização</a></li>
+      <li><a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=5575981864242&text=Vim%20pelo%20site%20direcaoeletrica.com.br%20e%20preciso%20de%20um%20servi%C3%A7o" target="_blank" rel="noopener">Chamar no WhatsApp</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<section class="hero" id="top">
+  <div class="hero-glow"></div>
+  <div class="scanline"></div>
+  <div class="hero-inner">
+    <p class="eyebrow">Oficina especializada · Feira de Santana / BA</p>
+    <h1>Direção Elétrica e Freios ABS em <span class="glow-text">Feira de Santana</span></h1>
+    <p class="lead">
+      Seu carro com <b>direção elétrica pesada</b>, luz de <b>ABS</b> ou <b>airbag</b> acesa, ar-condicionado fraco
+      ou falha na <b>injeção eletrônica</b>? Aqui o diagnóstico é feito com scanner atualizado e teste de bancada
+      antes de qualquer troca de peça. Atendemos <b>direção elétrica e hidráulica</b>, <b>freios ABS</b>,
+      <b>airbag</b>, <b>ar-condicionado automotivo</b>, <b>recarga de gás</b> e <b>injeção eletrônica</b> —
+      com peças de procedência e mão de obra especializada.
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=5575981864242&text=Vim%20pelo%20site%20direcaoeletrica.com.br%20e%20preciso%20de%20um%20servi%C3%A7o" target="_blank" rel="noopener">◆ Falar no WhatsApp</a>
+      <a class="btn btn-ghost" href="#servicos">Ver todos os serviços</a>
+    </div>
+    <div class="hero-tags">
+      <span class="tag">Direção elétrica</span>
+      <span class="tag">Freios ABS</span>
+      <span class="tag">Airbag</span>
+      <span class="tag">Ar-condicionado</span>
+      <span class="tag">Recarga de gás</span>
+      <span class="tag">Injeção eletrônica</span>
+      <span class="tag">Direção hidráulica</span>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="strip-track">
+    <span>Direção Elétrica</span><span>Freios ABS</span><span>Airbag</span><span>Ar-Condicionado Automotivo</span><span>Recarga de Gás</span><span>Injeção Eletrônica</span><span>Direção Hidráulica</span><span>Peças Originais</span>
+    <span>Direção Elétrica</span><span>Freios ABS</span><span>Airbag</span><span>Ar-Condicionado Automotivo</span><span>Recarga de Gás</span><span>Injeção Eletrônica</span><span>Direção Hidráulica</span><span>Peças Originais</span>
+  </div>
+</div>
+
+<section class="services section-pad" id="servicos">
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--yellow-dim)">Nossa oficina</p>
+    <h2>Sete frentes, um único padrão de diagnóstico</h2>
+    <p>Da caixa de direção elétrica ao compressor do ar-condicionado, cada sistema recebe teste, laudo e
+      execução documentados — sem "achismo", sem retrabalho.</p>
+
+    <div class="grid-services">
+      <div class="service-card neon-border">
+        <span class="svc-num">01 / DIREÇÃO</span>
+        <h3>Direção Elétrica</h3>
+        <p class="svc-desc">Diagnóstico de sensores de torque, motor elétrico de assistência e módulo de direção. Calibração eletrônica após qualquer intervenção e correção de direção pesada ou com tranco.</p>
+      </div>
+      <div class="service-card neon-border">
+        <span class="svc-num">02 / DIREÇÃO</span>
+        <h3>Direção Hidráulica</h3>
+        <p class="svc-desc">Reparo de bomba, caixa de direção, mangueiras e vazamentos, com troca de fluido e sangria completa do sistema.</p>
+      </div>
+      <div class="service-card neon-border">
+        <span class="svc-num">03 / SEGURANÇA</span>
+        <h3>Freios ABS</h3>
+        <p class="svc-desc">Leitura de falhas no módulo ABS, teste de sensores de roda e apagamento seguro de códigos. Diagnóstico da luz de freio acesa no painel.</p>
+      </div>
+      <div class="service-card neon-border">
+        <span class="svc-num">04 / SEGURANÇA</span>
+        <h3>Airbag</h3>
+        <p class="svc-desc">Diagnóstico de módulo de airbag, cintos pré-tensionados e conectores. Identificação do motivo da luz de airbag acesa antes de qualquer troca.</p>
+      </div>
+      <div class="service-card neon-border">
+        <span class="svc-num">05 / CLIMA</span>
+        <h3>Ar-Condicionado Automotivo</h3>
+        <p class="svc-desc">Higienização, teste de estanqueidade, troca de compressor, condensador e válvula de expansão. Diagnóstico completo do ciclo de refrigeração antes da recarga.</p>
+      </div>
+      <div class="service-card neon-border">
+        <span class="svc-num">06 / CLIMA</span>
+        <h3>Recarga de Gás</h3>
+        <p class="svc-desc">Recolhimento, vácuo e recarga com gás R134a ou R1234yf na quantidade exata de fábrica, com verificação de pressão em alta e baixa.</p>
+      </div>
+      <div class="service-card neon-border">
+        <span class="svc-num">07 / MOTOR</span>
+        <h3>Injeção Eletrônica &amp; Peças</h3>
+        <p class="svc-desc">Scanner multimarcas para leitura de falhas, limpeza de bicos injetores, corpo de borboleta e ajuste da central. Venda de peças de direção e refrigeração com procedência garantida.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gauges section-pad" id="diagnostico">
+  <div class="wrap">
+    <div class="gauges-head">
+      <p class="eyebrow">Painel de diagnóstico</p>
+      <h2>Todo serviço passa pelo mesmo painel de checagem</h2>
+      <p>Antes de fechar qualquer orçamento, medimos pressão de gás, resistência elétrica, código de falha e
+        torque — como num painel de instrumentos, cada sistema tem seu próprio "ponteiro" de referência.</p>
+    </div>
+
+    <div class="gauge-row">
+      <div class="gauge-card">
+        <svg viewBox="0 0 120 70"><path d="M10,64 A50,50 0 0,1 110,64" fill="none" stroke="#2a2a2d" stroke-width="8"/><path d="M10,64 A50,50 0 0,1 92,26" fill="none" stroke="#ffcc00" stroke-width="8" stroke-linecap="round" style="filter:drop-shadow(0 0 6px #ffcc00)"/></svg>
+        <div class="gauge-value">EPS</div>
+        <div class="gauge-label">Direção elétrica</div>
+      </div>
+      <div class="gauge-card">
+        <svg viewBox="0 0 120 70"><path d="M10,64 A50,50 0 0,1 110,64" fill="none" stroke="#2a2a2d" stroke-width="8"/><path d="M10,64 A50,50 0 0,1 105,45" fill="none" stroke="#ffcc00" stroke-width="8" stroke-linecap="round" style="filter:drop-shadow(0 0 6px #ffcc00)"/></svg>
+        <div class="gauge-value">ABS</div>
+        <div class="gauge-label">Freios verificados</div>
+      </div>
+      <div class="gauge-card">
+        <svg viewBox="0 0 120 70"><path d="M10,64 A50,50 0 0,1 110,64" fill="none" stroke="#2a2a2d" stroke-width="8"/><path d="M10,64 A50,50 0 0,1 70,15" fill="none" stroke="#ffcc00" stroke-width="8" stroke-linecap="round" style="filter:drop-shadow(0 0 6px #ffcc00)"/></svg>
+        <div class="gauge-value">SRS</div>
+        <div class="gauge-label">Airbag testado</div>
+      </div>
+      <div clindex.htmlass="gauge-card">
+        <svg viewBox="0 0 120 70"><path d="M10,64 A50,50 0 0,1 110,64" fill="none" stroke="#2a2a2d" stroke-width="8"/><path d="M10,64 A50,50 0 0,1 42,15" fill="none" stroke="#ffcc00" stroke-width="8" stroke-linecap="round" style="filter:drop-shadow(0 0 6px #ffcc00)"/></svg>
+        <div class="gauge-value">R134a</div>
+        <div class="gauge-label">Gás conferido</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about section-pad" id="curso">
+  <div class="wrap about-grid">
+    <div>
+      <p class="eyebrow" style="color:var(--yellow-dim)">Quem cuida do seu carro</p>
+      <h2>Especialistas em direção e refrigeração, também formando novos profissionais</h2>
+      <p>Anos de bancada, manômetro na mão e scanner conectado. Esse acúmulo virou padrão de atendimento:
+        nada sai da oficina sem teste registrado, e nenhuma peça é trocada sem antes esgotar o diagnóstico
+        correto do sistema — seja direção elétrica, freios ABS, airbag ou ar-condicionado.</p>
+      <p>É esse mesmo conhecimento técnico, testado em centenas de veículos em Feira de Santana, que hoje
+        também é ensinado para quem quer entrar ou evoluir na área de refrigeração automotiva.</p>
+    </div>
+
+    <div class="about-panel neon-border">
+      <p class="eyebrow">Formação profissional</p>
+      <h3>Curso de Refrigeração Automotiva</h3
